@@ -1,8 +1,16 @@
 
-variable "api_key_id" {
-  default = "5a53d2043768393836b871c1/5b7c7d7e663471746d0ee3a4/5f62651e7564612d32771e7d"
+variable "api_key" {
+  type = string
+  description = "API Key Id from Intersight"
 }
-variable "api_private_key" {
+variable "secretkey" {
+  type = string
+  description = "The path to your secretkey for Intersight OR the your secret key as a string"
+}
+variable "organization" {
+  type = string
+  description = "Organization Name"
+  default = "default"
 }
 variable "api_endpoint" {
   default = "https://www.intersight.com"
