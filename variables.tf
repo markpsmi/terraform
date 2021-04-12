@@ -18,6 +18,3 @@ variable "api_endpoint" {
 variable "organization_name" {
   default = "default"
 }
-variable "organization" {
-  default= "default"
-}  
