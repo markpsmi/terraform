@@ -1,5 +1,5 @@
 
-variable "api_key" {
+variable "api_key_id" {
   type = string
   description = "API Key Id from Intersight"
 }
