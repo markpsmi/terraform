@@ -3,7 +3,7 @@ variable "api_key_id" {
   type = string
   description = "API Key Id from Intersight"
 }
-variable "secretkey" {
+variable "api_private_key" {
   type = string
   description = "The path to your secretkey for Intersight OR the your secret key as a string"
 }
