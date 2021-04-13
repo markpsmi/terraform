@@ -31,11 +31,11 @@ resource "vsphere_virtual_machine" "vm" {
   memory   = 1024
   guest_id = "data.vsphere_virtual_machine.template.guest_id"
 
-  scsi_type = "data.vsphere_virtual_machine.template.scsi_type"
+  scsi_type = "lsilogic"
 
   network_interface {
     network_id   = "data.vsphere_network.network.id"
-    adapter_type = "data.vsphere_virtual_machine.template.network_interface_types[0]"
+    adapter_type = "vmxnet3"
   }
 
   clone {
