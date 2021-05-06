@@ -166,6 +166,6 @@ variable "ssh_user" {
 }
 
 variable "ssh_keys" {
-  type        = list
+  type        = string
   description = "The SSH key(s) that will be created on the cluster. This user is used when instantiating SSH connections to the Nodes/VMs of the cluster."
 }
