@@ -18,8 +18,6 @@ vc_datastore = "UCSDMarksmiBIGDS292"
 
 vc_portgroup = ["VM Network"]
 
-vc_password = "Password@123"
-
 ip_starting_address = "172.16.59.200"
 
 ip_pool_size = "small"
