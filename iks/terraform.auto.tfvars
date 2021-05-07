@@ -29,5 +29,3 @@ ip_gateway = "172.16.50.254"
 worker_size = "3"
 
 ssh_user = "iksadmin"
-
-ssh_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPo0G8IcvGmR5xLEiRAbvXctAFcRQ1HB6JRW+F4a8JRP root@localhost.localdomain"
