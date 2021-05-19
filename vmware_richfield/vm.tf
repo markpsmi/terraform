@@ -1,24 +1,24 @@
 data "vsphere_datacenter" "dc" {
-  name = "MarkpsmiDC"
+  name = "Richfield"
 }
 
 data "vsphere_datastore" "datastore" {
-  name          = "UCSDMarksmiBIGDS292"
+  name          = "NetApp_FC01"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 data "vsphere_compute_cluster" "cluster" {
-  name          = "MarkpsmiCL"
+  name          = "Core"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 data "vsphere_network" "network" {
-  name          = "VM Network"
+  name          = "labServers-3001"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 data "vsphere_virtual_machine" "template" {
-  name          = "CentOS7-Temp"
+  name          = "Centos8-Template"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
