@@ -18,7 +18,7 @@ data "vsphere_network" "network" {
 }
 
 data "vsphere_virtual_machine" "template" {
-  name          = "Centos8-Template"
+  name          = "ubuntu18-temp"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
