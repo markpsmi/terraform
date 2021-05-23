@@ -18,8 +18,6 @@ vc_datastore = "pure-ds01"
 
 vc_portgroup = ["labServers-3001"]
 
-vc_password = "Password@123"
-
 ip_starting_address = "10.101.128.171"
 
 ip_pool_size = "20"
