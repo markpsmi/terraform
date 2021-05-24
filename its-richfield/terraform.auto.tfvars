@@ -13,6 +13,8 @@ ntp_servers = ["ntp.esl.cisco.com"]
 timezone = "America/New_York"
 
 vc_cluster = "Core"
+
+vc_resource_pool ="Marks"
   
 vc_datastore = "pure-ds01"
 
