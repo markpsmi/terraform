@@ -2,7 +2,7 @@ cluster_name = "marks-iks"
 
 vc_target_name ="vcsa.rich.ciscolabs.com"
 
-ip_primary_dns = "101.101.128.15"
+ip_primary_dns = "10.101.128.15"
 
 ip_secondary_dns = "10.101.128.16"
 
