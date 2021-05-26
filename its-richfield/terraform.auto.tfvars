@@ -1,4 +1,4 @@
-cluster_name = "marks-iks"
+cluster_name = "nbn-cluster"
 
 vc_target_name ="vcsa.rich.ciscolabs.com"
 
