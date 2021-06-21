@@ -2,8 +2,6 @@ cluster_name = "marks-iks"
 
 vc_target_name ="172.16.50.50"
 dns_servers = ["208.67.220.220"]
-ip_primary_dns = "208.67.220.220"
-ip_secondary_dns = "208.67.220.222"
 domain_name = "glasshouse.com"
 ntp_servers = ["171.68.10.80"]
  
