@@ -17,3 +17,19 @@ ip_netmask = "255.255.240.0"
 ip_gateway = "172.16.50.254"
 worker_size = "small"
 ssh_user = "iksadmin"
+
+addons_list = [{
+    addon_policy_name = "dashboard"
+    addon             = "kubernetes-dashboard"
+    description       = "K8s Dashboard Policy"
+    upgrade_strategy  = "AlwaysReinstall"
+    install_strategy  = "InstallOnly"
+    },
+    {
+      addon_policy_name = "monitor"
+      addon             = "ccp-monitor"
+      description       = "Grafana Policy"
+      upgrade_strategy  = "AlwaysReinstall"
+      install_strategy  = "InstallOnly"
+    }
+  ]
