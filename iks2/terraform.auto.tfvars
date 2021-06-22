@@ -1,4 +1,4 @@
-cluster_name = "marks-iks"
+cluster_name = "terraform-iks"
 
 vc_target_name ="172.16.50.50"
 dns_servers = ["208.67.220.220"]
@@ -10,7 +10,7 @@ vc_cluster = "MarkpsmiCL"
   
 vc_datastore = "UCSDMarksmiBIGDS292"
 vc_portgroup = ["VM Network"]
-ip_starting_address = "172.16.59.200"
+ip_starting_address = "172.16.59.221"
 ip_pool_size = "20"
 ip_netmask = "255.255.240.0"
 ip_gateway = "172.16.50.254"
