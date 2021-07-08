@@ -1,9 +1,3 @@
-provider "intersight" {
-  apikey        = var.api_key_id
-  secretkey     = var.api_private_key
-  endpoint      = var.api_endpoint
-}
-
 module "infra_config_policy" {
   source           = "terraform-cisco-modules/iks/intersight//modules/infra_config_policy"
   name             = "${var.cluster_name}-infra-config"
