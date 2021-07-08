@@ -1,4 +1,4 @@
-cluster_name = "terraform-iks"
+cluster_name = "PIMCO-iks"
 
 vc_target_name ="172.16.50.50"
 dns_servers = ["208.67.220.220"]
