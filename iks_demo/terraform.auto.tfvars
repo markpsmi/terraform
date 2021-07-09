@@ -1,4 +1,4 @@
-cluster_name = "PIMCO-iks"
+cluster_name = "Expedia-iks"
 cluster_action   = "Deploy"
 
 vc_target_name ="172.16.50.50"
