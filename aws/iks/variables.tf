@@ -24,11 +24,11 @@ variable "worker2_desired_capacity" {
 }
 
 variable "k8_cluster_name" {
-  default     = "momagic_k8s"
+  default     = "marks_k8s"
   description = "K8 cluster name"
 }
 
 variable "k8_vpc_name" {
-  default     = "momagic_k8s_vpc"
+  default     = "marks_k8s_vpc"
   description = "K8 cluster name"
 }
