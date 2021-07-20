@@ -35,7 +35,8 @@ resource "kubernetes_deployment" "follower" {
               cpu    = "100m"
               memory = "100Mi"
             } 
-          }             
+          }   
+          type = "LoadBalancer"
           port {
           container_port = "6379"
           }         
