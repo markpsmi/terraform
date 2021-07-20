@@ -1,20 +1,20 @@
 cluster_name = "Expedia-iks"
 cluster_action   = "Deploy"
 
-vc_target_name ="172.16.50.50"
-dns_servers = ["208.67.220.220"]
-domain_name = "glasshouse.com"
-ntp_servers = ["171.68.10.80"]
+vc_target_name ="vcsa.rich.ciscolabs.com"
+dns_servers = ["0.101.128.15"]
+domain_name = "rich.ciscolabs.com"
+ntp_servers = ["ntp.esl.cisco.com"]
  
-timezone = "America/Los_Angeles"
-vc_cluster = "MarkpsmiCL"
+timezone = "America/New_York"
+vc_cluster = "Core
   
-vc_datastore = "UCSDMarksmiBIGDS292"
-vc_portgroup = ["VM Network"]
-ip_starting_address = "172.16.59.52"
+vc_datastore = "pure-ds01"
+vc_portgroup = ["labServers-3001"]
+ip_starting_address = "10.101.128.171"
 ip_pool_size = "20"
-ip_netmask = "255.255.240.0"
-ip_gateway = "172.16.50.254"
+ip_netmask = "255.255.255.0"
+ip_gateway = "10.101.128.1"
 worker_size = "small"
 ssh_user = "iksadmin"
 addons_list = [{
