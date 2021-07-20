@@ -7,7 +7,7 @@ domain_name = "rich.ciscolabs.com"
 ntp_servers = ["ntp.esl.cisco.com"]
  
 timezone = "America/New_York"
-vc_cluster = "Core
+vc_cluster = "Core"
   
 vc_datastore = "pure-ds01"
 vc_portgroup = ["labServers-3001"]
