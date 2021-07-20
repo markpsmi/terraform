@@ -36,7 +36,6 @@ resource "kubernetes_deployment" "follower" {
               memory = "100Mi"
             } 
           }   
-          type = "LoadBalancer"
           port {
           container_port = "6379"
           }         
@@ -61,6 +60,7 @@ resource "kubernetes_service" "follower" {
       role = "follower"
       tier = "backend"
     }
+    type = "LoadBalancer"     
     port {
       port        = 6379
     }
