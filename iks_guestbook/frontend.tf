@@ -28,11 +28,21 @@ resource "kubernetes_deployment" "frontend" {
         container {
           image = "gcr.io/google_samples/gb-frontend:v5"
           name  = "php-redis"
-
-        env {
+       
+         env {
           name = "GET_HOST_FROM"
-          value = "dns"
+          value = "env"
         }
+        env {
+          name = "REDIS_FOLLOWER_SERVICE_HOST"
+          #value = var.redis_follower_host
+          value = "a71e4a9415331430ea533f3532e0ec59-2066399134.us-west-1.elb.amazonaws.com"
+        }  
+        env {
+          name = "REDIS_LEADER_SERVICE_HOST"
+          #value = var.redis_leader_host
+          value = "a90683ff442b74c459ac54bf4e9a704d-839547321.us-west-1.elb.amazonaws.com"
+         }  
           resources {
             requests = {
               cpu    = "100m"
