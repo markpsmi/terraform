@@ -1,6 +1,6 @@
-cluster_name = "Expedia-iks"
+cluster_name = "Marks2-iks"
 cluster_action   = "Deploy"
-
+load_balancers = "5"
 vc_target_name ="172.16.50.50"
 dns_servers = ["208.67.220.220"]
 domain_name = "glasshouse.com"
