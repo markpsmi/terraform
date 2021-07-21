@@ -2,7 +2,7 @@ cluster_name = "Expedia-iks"
 cluster_action   = "Deploy"
 
 vc_target_name ="vcsa.rich.ciscolabs.com"
-dns_servers = ["0.101.128.15"]
+dns_servers = ["10.101.128.15"]
 domain_name = "rich.ciscolabs.com"
 ntp_servers = ["ntp.esl.cisco.com"]
  
