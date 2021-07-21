@@ -7,5 +7,5 @@ terraform {
   }
 }
 provider "kubernetes" {
-  config_path = "/mnt/c/Users/markpsmi/Desktop/Intersight/IKS/Expedia-iks-kubeconfig.yml"
+  config_path = var.cluster_yaml
 }
