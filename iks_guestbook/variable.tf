@@ -9,3 +9,4 @@ variable "api_private_key" {
 }
 variable "api_endpoint" {
   default = "https://www.intersight.com"
+}  
