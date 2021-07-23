@@ -1,11 +1,18 @@
-terraform {
-  required_providers {
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = ">= 2.0.0"
-    }
-  }
+provider "intersight" {
+  apikey        = var.api_key_id
+  secretkey     = var.api_private_key
+  endpoint      = var.api_endpoint
 }
+
+data "intersight_kubernetes_cluster" "Expedia-iks" {
+  name = var.cluster_names["Expedia-iks"]
+}
+
 provider "kubernetes" {
-  config_path = var.cluster_yaml
+  alias = "Expedia-iks"
+
+  host                   = yamldecode(base64decode(data.intersight_kubernetes_cluster.demo_dc_a.results[0].kube_config)).clusters[0].cluster.server
+  cluster_ca_certificate = base64decode(yamldecode(base64decode(data.intersight_kubernetes_cluster.demo_dc_a.results[0].kube_config)).clusters[0].cluster.certificate-authority-data)
+  client_certificate     = base64decode(yamldecode(base64decode(data.intersight_kubernetes_cluster.demo_dc_a.results[0].kube_config)).users[0].user.client-certificate-data)
+  client_key             = base64decode(yamldecode(base64decode(data.intersight_kubernetes_cluster.demo_dc_a.results[0].kube_config)).users[0].user.client-key-data)
 }
