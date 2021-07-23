@@ -3,9 +3,8 @@ provider "intersight" {
   secretkey     = var.api_private_key
   endpoint      = var.api_endpoint
 }
-
 data "intersight_kubernetes_cluster" "Expedia-iks" {
-  name = var.cluster_names["Expedia-iks"]
+  name = "Expedia-iks"
 }
 
 provider "kubernetes" {
