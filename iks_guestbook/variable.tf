@@ -1,6 +1,3 @@
-variable "cluster_yaml" {
-  type    = string
-}
 variable "api_key_id" {
   type  = string
 }
