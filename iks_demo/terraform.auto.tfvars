@@ -1,4 +1,4 @@
-cluster_name = "Marks2-iks"
+cluster_name = "My-iks-cluster"
 cluster_action   = "Deploy"
 load_balancers = "5"
 vc_target_name ="172.16.50.50"
