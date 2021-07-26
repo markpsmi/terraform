@@ -34,20 +34,6 @@ resource "kubernetes_deployment" "frontend" {
         tier = "frontend"
       }
     }
- resource "kubernetes_network_policy" "example" {
-  metadata {
-    name      = "allow-all-traffic"
-    namespace = "default"
-  }
-
-  spec {
-    pod_selector {}
-    egress {}
-    ingress {}
-    policy_types = ["Ingress", "Egress"]        
-    }
-}  
-
     template {
       metadata {
         labels = {
@@ -110,3 +96,16 @@ resource "kubernetes_service" "frontend" {
     }
   }
 }
+resource "kubernetes_network_policy" "example" {
+  metadata {
+    name      = "allow-all-traffic"
+    namespace = "default"
+  }
+
+  spec {
+    pod_selector {}
+    egress {}
+    ingress {}
+    policy_types = ["Ingress", "Egress"]        
+    }
+}  
