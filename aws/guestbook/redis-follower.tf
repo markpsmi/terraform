@@ -60,7 +60,7 @@ resource "kubernetes_service" "follower" {
       role = "follower"
       tier = "backend"
     }
-    type = "LoadBalancer"     
+      
     port {
       port        = 6379
     }
