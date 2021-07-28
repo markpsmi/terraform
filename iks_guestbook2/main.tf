@@ -49,19 +49,9 @@ resource "kubernetes_deployment" "frontend" {
        
          env {
           name = "GET_HOST_FROM"
-          value = "env"
+          value = "dns"
         }
-        env {
-          name = "REDIS_FOLLOWER_SERVICE_HOST"
-          value = var.redis_follower_host
-          #value = "a71e4a9415331430ea533f3532e0ec59-2066399134.us-west-1.elb.amazonaws.com"
-        }  
-        env {
-          name = "REDIS_LEADER_SERVICE_HOST"
-          value = var.redis_leader_host
-          #value = "a90683ff442b74c459ac54bf4e9a704d-839547321.us-west-1.elb.amazonaws.com"
-         }  
-          resources {
+        resources {
             requests = {
               cpu    = "100m"
               memory = "100Mi"
@@ -96,16 +86,139 @@ resource "kubernetes_service" "frontend" {
     }
   }
 }
-resource "kubernetes_network_policy" "example" {
+resource "kubernetes_deployment" "follower" {
   metadata {
-    name      = "allow-all-traffic"
-    namespace = "default"
-  }
-
-  spec {
-    pod_selector {}
-    egress {}
-    ingress {}
-    policy_types = ["Ingress", "Egress"]        
+    name = "redis-follower"
+    labels = {
+      app = "redis"
+      role = "follower"
+      tier = "backend"
     }
-}  
+  }  
+  spec {
+    replicas = 2
+
+    selector {
+      match_labels = {
+        app  = "redis"
+      }
+    }
+
+    template {
+      metadata {
+        labels = {
+          app = "redis"
+          role = "follower"
+          tier = "backend"                  
+        }
+      }
+
+      spec {
+        container {
+          image = "gcr.io/google_samples/gb-redis-follower:v2"
+          name  = "follower"
+
+          resources {
+            requests = {
+              cpu    = "100m"
+              memory = "100Mi"
+            } 
+          }             
+          port {
+          container_port = "6379"
+          }         
+        }                 
+      }
+    }
+  }
+}
+
+resource "kubernetes_service" "follower" {
+  metadata {
+    name = "redis-follower"
+    labels = {
+      app = "redis"
+      role = "follower"
+      tier = "backend"
+    }   
+  }
+  spec {
+    selector = {
+      app = "redis"
+      role = "follower"
+      tier = "backend"
+    }
+    #type = "LoadBalancer"
+    port {
+      port        = 6379
+    }
+  }
+}
+resource "kubernetes_deployment" "leader" {
+  metadata {
+    name = "redis-leader"
+    labels = {
+      app = "redis"
+      role = "leader"
+      tier = "backend"
+    }
+  }  
+  spec {
+    replicas = 1
+
+    selector {
+      match_labels = {
+        app  = "redis"
+      }
+    }
+
+    template {
+      metadata {
+        labels = {
+          app = "redis"
+          role = "leader"
+          tier = "backend"                  
+        }
+      }
+
+      spec {
+        container {
+          image = "docker.io/redis:6.0.5"
+          name  = "follower"
+
+          resources {
+            requests = {
+              cpu    = "100m"
+              memory = "100Mi"
+            } 
+          }             
+          port {
+          container_port = "6379"
+          }         
+        }                 
+      }
+    }
+  }
+}
+resource "kubernetes_service" "leader" {
+  metadata {
+    name = "redis-leader"
+    labels = {
+      app = "redis"
+      role = "leader"
+      tier = "backend"
+    }   
+  }
+  spec {
+    selector = {
+      app = "redis"
+      role = "leader"
+      tier = "backend"
+    }
+    #type = "LoadBalancer"
+    port {
+      port = 6379
+      target_port = 6379
+    }
+  }
+}
