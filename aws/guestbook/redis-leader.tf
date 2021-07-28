@@ -59,7 +59,7 @@ resource "kubernetes_service" "leader" {
       role = "leader"
       tier = "backend"
     }
-    type = "LoadBalancer"
+    
     port {
       port = 6379
       target_port = 6379
