@@ -1,4 +1,4 @@
-cluster_name = "Marks-iks-cluster"
+cluster_name = "Demo-iks-cluster"
 cluster_action   = "Deploy"
 load_balancers = "5"
 vc_target_name ="172.16.50.50"
