@@ -11,21 +11,21 @@ module "terraform-intersight-iks" {
 
   ip_pool = {
     use_existing        = false
-    name                = "ippool"
-    ip_starting_address = "10.139.120.220"
+    name                = "marks_ippool"
+    ip_starting_address = "172.16.59.2"
     ip_pool_size        = "20"
-    ip_netmask          = "255.255.255.0"
-    ip_gateway          = "10.139.120.1"
-    dns_servers         = ["10.101.128.15"]
+    ip_netmask          = "255.255.240.0"
+    ip_gateway          = "172.16.50.254"
+    dns_servers         = ["208.67.220.220"]
   }
 
   sysconfig = {
     use_existing = false
     name         = "New"
-    domain_name  = "rich.ciscolabs.com"
-    timezone     = "America/New_York"
-    ntp_servers  = ["10.101.128.15"]
-    dns_servers  = ["10.101.128.15"]
+    domain_name  = "glasshouse.com"
+    timezone     = "America/Los_Angeles"
+    ntp_servers  = ["171.68.10.80"]
+    dns_servers  = ["208.67.220.220"]
   }
 
   k8s_network = {
@@ -70,10 +70,10 @@ module "terraform-intersight-iks" {
   infra_config_policy = {
     use_existing     = false
     name             = "vcenter"
-    vc_target_name   = "marvel-vcsa.rich.ciscolabs.com"
-    vc_portgroups    = ["panther|iks|tme"]
-    vc_datastore     = "iks"
-    vc_cluster       = "tchalla"
+    vc_target_name   = "172.16.50.50"
+    vc_portgroups    = ["VM Network"]
+    vc_datastore     = "UCSDMarksmiBIGDS292"
+    vc_cluster       = "MarkpsmiCL"
     vc_resource_pool = ""
     vc_password      = var.vc_password
   }
