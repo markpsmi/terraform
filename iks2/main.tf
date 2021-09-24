@@ -35,6 +35,7 @@ module "ip_pool_policy" {
 
 module "network" {
   source      = "terraform-cisco-modules/iks/intersight//modules/k8s_network"
+  version = "1.0.2"
   policy_name = "${var.cluster_name}-network"
   dns_servers = var.dns_servers
   ntp_servers = var.ntp_servers
