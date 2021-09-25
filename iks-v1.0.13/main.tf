@@ -21,7 +21,7 @@ module "terraform-intersight-iks" {
 
   sysconfig = {
     use_existing = false
-    name         = "New"
+    name         = "Mark"
     domain_name  = "glasshouse.com"
     timezone     = "America/Los_Angeles"
     ntp_servers  = ["171.68.10.80"]
@@ -69,7 +69,7 @@ module "terraform-intersight-iks" {
   # Infra Config Policy Information
   infra_config_policy = {
     use_existing     = false
-    name             = "vcenter"
+    name             = "marksvcenter"
     vc_target_name   = "172.16.50.50"
     vc_portgroups    = ["VM Network"]
     vc_datastore     = "UCSDMarksmiBIGDS292"
@@ -102,7 +102,7 @@ module "terraform-intersight-iks" {
   }
   # Cluster information
   cluster = {
-    name                = "new_cluster"
+    name                = "Marks_IKS_cluster"
     action              = "Unassign"
     wait_for_completion = false
     worker_nodes        = 5
