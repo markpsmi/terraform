@@ -105,7 +105,7 @@ module "terraform-intersight-iks" {
     name                = "Marks_IKS_cluster"
     action              = "Unassign"
     wait_for_completion = false
-    worker_nodes        = 5
+    worker_nodes        = 3
     load_balancers      = 5
     worker_max          = 20
     control_nodes       = 1
