@@ -5,7 +5,7 @@ resource "intersight_vmedia_policy" "vmedia1" {
     device_type    = "cdd"
     mount_protocol = "http"
     volume_name   = "ESXi-6.5a-LD"
-    file_location = "https://172.16.58.2/path/to/iso/VMware_ESXi_6.7.0_14320388_Custom_Cisco_6.7.3.1.iso"
+    file_location = "https://172.16.58.2/path/to/iso/new.iso"
     mount_options = "http"
     authentication_protocol = "none"
   }
