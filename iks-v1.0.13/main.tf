@@ -102,8 +102,8 @@ module "terraform-intersight-iks" {
   }
   # Cluster information
   cluster = {
-    name                = "Marks_IKS_cluster"
-    action              = "Unassign"
+    name                = "lowes_iks_cluster"
+    action              = "Deploy"
     wait_for_completion = false
     worker_nodes        = 3
     load_balancers      = 5
