@@ -102,7 +102,7 @@ module "terraform-intersight-iks" {
   }
   # Cluster information
   cluster = {
-    name                = "knowledge_thurday"
+    name                = "knowledge_friday"
     action              = "Deploy"
     wait_for_completion = false
     worker_nodes        = 3
