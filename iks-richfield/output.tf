@@ -1,3 +1,3 @@
 output "cluster_moid" {
-  value = module.cluster_profile.cluster_moid
+  value = module.terraform-intersight-iks.cluster_moid
 }
