@@ -1,5 +1,5 @@
 resource "intersight_server_profile" "server1" {
-  name = "Eugene"
+  name = "MarksServer"
   action = "No-op"
   tags {
     key = "server"
