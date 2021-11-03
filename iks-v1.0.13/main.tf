@@ -102,7 +102,7 @@ module "terraform-intersight-iks" {
   }
   # Cluster information
   cluster = {
-    name                = "marks-iks_cluster"
+    name                = "marks-iks-cluster"
     action              = "Deploy"
     wait_for_completion = false
     worker_nodes        = 3
