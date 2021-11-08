@@ -10,38 +10,23 @@ module "terraform-intersight-iks" {
 
 
   ip_pool = {
-    use_existing        = false
-    name                = "marks_ippool"
-    ip_starting_address = "172.16.59.2"
-    ip_pool_size        = "20"
-    ip_netmask          = "255.255.240.0"
-    ip_gateway          = "172.16.50.254"
-    dns_servers         = ["208.67.220.220"]
-  }
+    use_existing        = true
+    name                = "FSO-IaC-Kubernetes"
+}
 
   sysconfig = {
-    use_existing = false
-    name         = "Mark"
-    domain_name  = "glasshouse.com"
-    timezone     = "America/Los_Angeles"
-    ntp_servers  = ["171.68.10.80"]
-    dns_servers  = ["208.67.220.220"]
-  }
+    use_existing = true
+    name         = "FSO-Kube-Node-OS-Config"
+}
 
   k8s_network = {
-    use_existing = false
-    name         = "default"
-
-    ######### Below are the default settings.  Change if needed. #########
-    pod_cidr     = "100.65.0.0/16"
-    service_cidr = "100.64.0.0/24"
-    cni          = "Calico"
+    use_existing = true
+    name         = "FSO-Kube-Network-CIDR"  
   }
   # Version policy
   version_policy = {
-    use_existing = false
-    name         = "1.19.5"
-    version      = "1.19.5"
+    use_existing = true
+    name         = "FSO-Kube-1.19.15"
   }
 
   # tr_policy_name = "test"
@@ -68,15 +53,9 @@ module "terraform-intersight-iks" {
 
   # Infra Config Policy Information
   infra_config_policy = {
-    use_existing     = false
-    name             = "marksvcenter"
-    vc_target_name   = "172.16.50.50"
-    vc_portgroups    = ["VM Network"]
-    vc_datastore     = "UCSDMarksmiBIGDS292"
-    vc_cluster       = "MarkpsmiCL"
-    vc_resource_pool = ""
-    vc_password      = var.vc_password
-  }
+    use_existing     = true
+    name             = "FSO-HX-IaC-2101"
+}
 
   addons_list = [{
     addon_policy_name = "dashboard"
@@ -94,12 +73,9 @@ module "terraform-intersight-iks" {
     }
   ]
   instance_type = {
-    use_existing = false
-    name         = "small"
-    cpu          = 4
-    memory       = 16386
-    disk_size    = 40
-  }
+    use_existing = true
+    name         = "FSO-VM-Instance-4-40-16"
+  }    
   # Cluster information
   cluster = {
     name                = "marks-iks-cluster"
