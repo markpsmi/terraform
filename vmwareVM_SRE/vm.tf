@@ -1,24 +1,24 @@
 data "vsphere_datacenter" "dc" {
-  name = "MarkpsmiDC"
+  name = "ACI2-Lab"
 }
 
 data "vsphere_datastore" "datastore" {
-  name          = "UCSDMarksmiBIGDS292"
+  name          = "ACI2-Lab"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 data "vsphere_compute_cluster" "cluster" {
-  name          = "MarkpsmiCL"
+  name          = "HX-Cluster"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 data "vsphere_network" "network" {
-  name          = "VM Network"
+  name          = "2101"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 data "vsphere_virtual_machine" "template" {
-  name          = "CentOS7-Temp"
+  name          = "CentOS7-Template"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
@@ -52,11 +52,11 @@ disk {
       }
 
       network_interface {
-        ipv4_address = "10.0.0.10"
+        ipv4_address = "10.21.1.27"
         ipv4_netmask = 24
       }
 
-      ipv4_gateway = "10.0.0.1"
+      ipv4_gateway = "10.21.1.1"
     }
   }
 }
