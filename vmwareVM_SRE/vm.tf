@@ -57,6 +57,7 @@ disk {
       }
 
       ipv4_gateway = "10.21.1.1"
+      time_zone = "New Zealand Standard Time"
     }
   }
 }
