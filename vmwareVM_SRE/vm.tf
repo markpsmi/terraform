@@ -49,6 +49,7 @@ disk {
       linux_options {
         host_name = "terraform-test"
         domain    = "test.internal"
+        time_zone = "America/Chicago"
       }
 
       network_interface {
@@ -58,6 +59,5 @@ disk {
 
       ipv4_gateway = "10.21.1.1"
     }
-    time_zone = "America/Chicago"
   }
 }
