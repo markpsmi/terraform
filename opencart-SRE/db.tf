@@ -32,7 +32,7 @@ resource "vsphere_virtual_machine" "dbserver" {
         domain    = var.vm_domain
       }
       network_interface {
-      ipv4_address = "10.21.1.27"
+      ipv4_address = "10.21.1.28"
       ipv4_netmask = 24
       }
       ipv4_gateway = "10.21.1.1"
