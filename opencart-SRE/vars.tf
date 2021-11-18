@@ -49,6 +49,7 @@ variable "vm_prefix" {
 }
 
 variable "vm_folder" {
+  default = "test"
   type = string
 }
 
