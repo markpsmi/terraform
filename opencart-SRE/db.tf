@@ -28,7 +28,6 @@ resource "vsphere_virtual_machine" "dbserver" {
     template_uuid = data.vsphere_virtual_machine.template.id
     customize {
       linux_options {
-        dns_server_list = ["10.112.10.11", "10.112.10.12"]
         host_name = "${var.db_server_prefix}-${random_string.folder_name_prefix.id}-${count.index + 1}"
         domain    = var.vm_domain
       }
@@ -37,6 +36,7 @@ resource "vsphere_virtual_machine" "dbserver" {
       ipv4_netmask = 24
       }
       ipv4_gateway = "10.21.1.1"
+      dns_server_list = ["10.112.10.11", "10.112.10.12"]
     }
   }
 }
