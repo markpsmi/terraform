@@ -4,9 +4,8 @@
 resource "vsphere_virtual_machine" "webserver" {
   count            = var.web_server_count
   name             = "${var.web_server_prefix}-${random_string.folder_name_prefix.id}-${count.index + 1}"
-  resource_pool_id = data.vsphere_resource_pool.pool.id
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id     = data.vsphere_datastore.datastore.id
-  folder           = vsphere_folder.vm_folder.path
 
   num_cpus = var.web_server_cpu
   memory  = var.web_server_memory
