@@ -18,7 +18,10 @@ variable "vsphere_password" {
 variable "datacenter" {
   type = string
 }
-
+// The cluster the resources will be created in.
+variable "cluster_name" {
+  type = string
+}
 
 // The resource pool the virtual machines will be placed in.
 variable "resource_pool" {
