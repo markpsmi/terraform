@@ -3,10 +3,9 @@
 resource "vsphere_virtual_machine" "dbserver" {
   count            = 1
   name             = "${var.db_server_prefix}-${random_string.folder_name_prefix.id}-${count.index + 1}"
-  resource_pool_id = data.vsphere_resource_pool.pool.id
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   datastore_id     = data.vsphere_datastore.datastore.id
-  folder           = vsphere_folder.vm_folder.path
-
+  
   num_cpus = var.db_server_cpu
   memory  = var.db_server_memory
   guest_id = data.vsphere_virtual_machine.template.guest_id
@@ -32,11 +31,13 @@ resource "vsphere_virtual_machine" "dbserver" {
         host_name = "${var.db_server_prefix}-${random_string.folder_name_prefix.id}-${count.index + 1}"
         domain    = var.vm_domain
       }
-      network_interface {}
+      network_interface {
+      ipv4_address = "10.21.1.27"
+      ipv4_netmask = 24
+      }
+      ipv4_gateway = "10.21.1.1"
     }
   }
-
-
 }
 
 resource "null_resource" "db_init" {
