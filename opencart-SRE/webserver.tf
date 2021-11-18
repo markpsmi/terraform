@@ -32,7 +32,11 @@ resource "vsphere_virtual_machine" "webserver" {
         host_name = "${var.web_server_prefix}-${random_string.folder_name_prefix.id}-${count.index + 1}"
         domain    = var.vm_domain
       }
-      network_interface {}
+      network_interface {
+      ipv4_address = "10.21.1.${30 + count.index}"
+      ipv4_netmask = 24
+      }
+      ipv4_gateway = "10.21.1.1"
     }
   }
 
