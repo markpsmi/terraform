@@ -49,11 +49,6 @@ data "vsphere_datastore" "datastore" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-data "vsphere_resource_pool" "pool" {
-  name          = var.resource_pool
-  datacenter_id = data.vsphere_datacenter.dc.id
-}
-
 data "vsphere_network" "network" {
   name          = var.network_name
   datacenter_id = data.vsphere_datacenter.dc.id
