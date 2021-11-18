@@ -33,6 +33,7 @@ resource "vsphere_virtual_machine" "webserver" {
         domain    = var.vm_domain
       }
       network_interface {
+      dns_server_list = ["10.112.10.11", "10.112.10.12"]
       ipv4_address = "10.21.1.${30 + count.index}"
       ipv4_netmask = 24
       }
