@@ -1,4 +1,4 @@
-  datacenter="SJC19"
+  datacenter="ACI2-Lab"
   resource_pool="IntersightPool"
   datastore_name="nfs-datastore-0"
   network_name="vlan1238"
