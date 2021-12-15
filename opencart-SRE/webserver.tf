@@ -34,7 +34,7 @@ resource "vsphere_virtual_machine" "webserver" {
       }
       network_interface {
       dns_server_list = ["10.112.10.11", "10.112.10.12"]
-      ipv4_address = "10.21.1.${30 + count.index}"
+      ipv4_address = "10.21.1.${102 + count.index}"
       ipv4_netmask = 24
       }
       ipv4_gateway = "10.21.1.1"
