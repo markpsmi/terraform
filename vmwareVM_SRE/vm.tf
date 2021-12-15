@@ -53,7 +53,7 @@ disk {
       }
 
       network_interface {
-        ipv4_address = "10.21.1.27"
+        ipv4_address = "10.21.1.100"
         ipv4_netmask = 24
       }
 
