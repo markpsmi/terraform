@@ -79,7 +79,7 @@ module "terraform-intersight-iks" {
     vc_password      = var.vc_password
   }
 
-  addons_list = [{
+  addons = [{
     addon_policy_name = "dashboard"
     addon             = "kubernetes-dashboard"
     description       = "K8s Dashboard Policy"
