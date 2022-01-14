@@ -27,11 +27,11 @@ module "terraform-intersight-iks" {
   ip_pool = {
     use_existing        = false
     name                = "marks_ip_pool"
-    # ip_starting_address = "172.16.59.2"
-    # ip_pool_size        = "20"
-    # ip_netmask          = "255.255.240.0"
-    # ip_gateway          = "172.16.50.254"
-    # dns_servers         = ["208.67.220.220"]
+    ip_starting_address = "172.16.59.2"
+    ip_pool_size        = "20"
+    ip_netmask          = "255.255.240.0"
+    ip_gateway          = "172.16.50.254"
+    dns_servers         = ["208.67.220.220"]
   }
 
 # Sysconfig Policy (UI Reference NODE OS Configuration) (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
