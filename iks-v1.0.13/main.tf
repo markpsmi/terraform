@@ -70,7 +70,7 @@ module "terraform-intersight-iks" {
   # Infra Config Policy Information
   infraConfigPolicy = {
     use_existing     = false
-    name             = "marksvcenter"
+    policyName       = "marksvcenter"
     vc_target_name   = "172.16.50.50"
     vc_portgroups    = ["VM Network"]
     vc_datastore     = "UCSDMarksmiBIGDS292"
