@@ -23,6 +23,7 @@ variable "ssh_user" {
 variable "ssh_key" {
   type        = string
   description = "ssh key for login"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPo0G8IcvGmR5xLEiRAbvXctAFcRQ1HB6JRW+F4a8JRP root@localhost.localdomain"
 }    
 variable "vcPassword" {
   type        = string
