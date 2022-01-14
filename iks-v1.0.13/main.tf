@@ -68,7 +68,7 @@ module "terraform-intersight-iks" {
   }
 
   # Infra Config Policy Information
-  infra_config_policy = {
+  infraConfigPolicy = {
     use_existing     = false
     name             = "marksvcenter"
     vc_target_name   = "172.16.50.50"
