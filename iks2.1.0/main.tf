@@ -137,15 +137,3 @@ module "terraform-intersight-iks" {
   organization = var.organization
   tags         = var.tags
 }
-
-tags = [
-  {
-    "key" : "managed_by"
-    "value" : "Terraform"
-  },
-  {
-    "key" : "owner"
-    "value" : "jb"
-  }
-]
-organization = "default" # Change this if a different org is required.  Default org is set to "default"
