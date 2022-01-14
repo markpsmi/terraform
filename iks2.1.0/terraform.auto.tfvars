@@ -1,8 +1,5 @@
 # Required Varilables
-apikey       = ""
-vc_password  = ""
 ssh_user     = "iksadmin"
-ssh_key      = ""
 # Optional Variables
 tags = [
   {
