@@ -80,6 +80,7 @@ module "terraform-intersight-iks" {
   }
 
   addons = [{
+     createNew = true
     addon_policy_name = "dashboard"
     addon             = "kubernetes-dashboard"
     description       = "K8s Dashboard Policy"
@@ -87,6 +88,7 @@ module "terraform-intersight-iks" {
     install_strategy  = "InstallOnly"
     },
     {
+       createNew = true
       addon_policy_name = "monitor"
       addon             = "ccp-monitor"
       description       = "Grafana Policy"
