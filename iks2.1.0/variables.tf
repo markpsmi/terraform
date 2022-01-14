@@ -23,6 +23,11 @@ variable "ssh_user" {
 variable "ssh_key" {
   type        = string
   description = "SSH Public Key to be used to node login."
+  
+variable "vcPassword" {
+  type        = string
+  description = "vCenter Password"
+}  
 }
 variable "tags" {
   type    = list(map(string))
