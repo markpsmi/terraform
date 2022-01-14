@@ -37,8 +37,9 @@ module "terraform-intersight-iks" {
     service_cidr = "100.64.0.0/24"
     cni          = "Calico"
   }
+  
   # Version policy
-  version_policy = {
+  versionPolicy = {
     use_existing = false
     name         = "1.19.5"
     version      = "1.19.5"
