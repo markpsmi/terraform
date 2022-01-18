@@ -90,7 +90,7 @@ module "terraform-intersight-iks" {
   infraConfigPolicy = {
     use_existing = false
     # platformType = "iwe"
-    # targetName   = "0"
+    targetName   = "esxi"
     policyName   = "marksvcenter"
     description  = "Test Policy"
     interfaces   = ["VM Network"]
