@@ -89,8 +89,8 @@ module "terraform-intersight-iks" {
 # Infrastructure Configuration Policy (To create new change "use_existing" to 'false' and uncomment variables and modify them to meet your needs.)
   infraConfigPolicy = {
     use_existing = false
-    # platformType = "iwe"
-    targetName   = "esxi"
+    platformType = "esxi"
+    targetName   = "172.16.50.50"
     policyName   = "marksvcenter"
     description  = "Test Policy"
     interfaces   = ["VM Network"]
