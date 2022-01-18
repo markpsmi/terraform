@@ -1,0 +1,29 @@
+<?php
+// HTTP
+define('HTTP_SERVER', 'http://<OC_SERVER>/opencart/');
+define('HTTP_ADMIN', 'http://<OC_SERVER>/opencart/admin/');
+
+// HTTPS
+define('HTTPS_SERVER', 'http://<OC_SERVER>/opencart/');
+// DIR
+define('DIR_APPLICATION', '/var/www/html/opencart/catalog/');
+define('DIR_SYSTEM', '/var/www/html/opencart/system/');
+define('DIR_DATABASE', '/var/www/html/opencart/system/database/');
+define('DIR_LANGUAGE', '/var/www/html/opencart/catalog/language/');
+define('DIR_TEMPLATE', '/var/www/html/opencart/catalog/view/theme/');
+define('DIR_CONFIG', '/var/www/html/opencart/system/config/');
+define('DIR_IMAGE', '/var/www/html/opencart/image/');
+define('DIR_CACHE', '/var/www/html/opencart/system/storage/cache/');
+define('DIR_DOWNLOAD', '/var/www/html/opencart/system/storage/download/');
+define('DIR_UPLOAD', '/var/www/html/opencart/system/storage/upload/');
+define('DIR_MODIFICATION', '/var/www/html/opencart/system/storage/modification/');
+define('DIR_LOGS', '/var/www/html/opencart/system/storage/logs/');
+
+// DB
+define('DB_DRIVER', 'mysqli');
+define('DB_HOSTNAME', '<OC_DB_SERVER>');
+define('DB_USERNAME', '<OC_DB_USERNAME>');
+define('DB_PASSWORD', '<OC_DB_PASSWORD>');
+define('DB_DATABASE', '<OC_DB_DATABASE>');
+define('DB_PREFIX', 'oc_');
+define('DB_PORT', '3306');
