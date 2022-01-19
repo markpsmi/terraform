@@ -3,7 +3,7 @@
   resource_pool=""
   datastore_name="UCSDMarksmiBIGDS292"
   network_name="VM Network"
-  template_name="CentOS7-Temp"
+  template_name="CentOS7-Template"
   vm_prefix="marks"
   vm_folder="opencart"
   web_server_count="4"
