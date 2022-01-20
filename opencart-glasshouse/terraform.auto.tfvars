@@ -6,7 +6,7 @@
   template_name="CentOS7-Template"
   vm_prefix="marks"
   vm_folder="opencart"
-  web_server_count="4"
+  web_server_count="2"
   vm_domain="cisco.com"
   db_server_cpu="4"
   db_server_memory="2048"
