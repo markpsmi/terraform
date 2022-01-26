@@ -116,11 +116,11 @@ module "terraform-intersight-iks" {
     },
     {
     createNew = true
-    addon_policy_name = "marks-dashboard"
-    addon             = "kubernetes-dashboard"
+    addonPolicyName = "marks-dashboard"
+    addonName       = "kubernetes-dashboard"
     description       = "K8s Dashboard Policy"
-    upgrade_strategy  = "AlwaysReinstall"
-    install_strategy  = "InstallOnly"
+    upgradeStrategy  = "AlwaysReinstall"
+    installStrategy  = "InstallOnly"
     releaseVersion = "3.0.2-cisco6-helm3"
     overrides = yamlencode({"demoApplication":{"enabled":true}})  
     }  
