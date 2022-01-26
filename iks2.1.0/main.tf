@@ -113,7 +113,17 @@ module "terraform-intersight-iks" {
     installStrategy  = "InstallOnly"
     releaseVersion = "1.7.4-cisco4-helm3"
     overrides = yamlencode({"demoApplication":{"enabled":true}})
-    }
+    },
+    {
+    createNew = true
+    addon_policy_name = "marks-dashboard"
+    addon             = "kubernetes-dashboard"
+    description       = "K8s Dashboard Policy"
+    upgrade_strategy  = "AlwaysReinstall"
+    install_strategy  = "InstallOnly"
+    releaseVersion = "3.0.2-cisco6-helm3"
+    overrides = yamlencode({"demoApplication":{"enabled":true}})  
+    }  
     # {
     # createNew = true
     # addonName            = "ccp-monitor"
