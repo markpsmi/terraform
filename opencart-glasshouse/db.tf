@@ -56,6 +56,7 @@ resource "null_resource" "db_init" {
     inline = [
       "sudo hostnamectl set-hostname --static dbserver-${count.index}",
       "wget -O /tmp/oc_db.yaml https://ccs-demo.s3.amazonaws.com/opencart_db.yaml",
+      "sudo sed -i 's/10.%/172.%/g' /tmp/oc_db.yaml",
       "sudo ansible-playbook -i localhost /tmp/oc_db.yaml"
     ]
   }
