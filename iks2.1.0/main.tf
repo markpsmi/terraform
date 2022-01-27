@@ -16,7 +16,7 @@ module "terraform-intersight-iks" {
     wait_for_completion = false
     worker_nodes        = 3
     load_balancers      = 6
-    worker_max          = 3
+    worker_max          = 4
     control_nodes       = 1
     ssh_user            = var.ssh_user
     ssh_public_key      = var.ssh_key
