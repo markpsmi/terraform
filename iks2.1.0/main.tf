@@ -11,12 +11,12 @@ module "terraform-intersight-iks" {
 
 # Kubernetes Cluster Profile  Adjust the values as needed.
   cluster = {
-    name                = "Marks_iks_cluster"
+    name                = "Marks_iks_cluster2"
     action              = "Unassign"
     wait_for_completion = false
     worker_nodes        = 5
-    load_balancers      = 5
-    worker_max          = 20
+    load_balancers      = 6
+    worker_max          = 3
     control_nodes       = 1
     ssh_user            = var.ssh_user
     ssh_public_key      = var.ssh_key
@@ -28,7 +28,7 @@ module "terraform-intersight-iks" {
     use_existing        = false
     name                = "marks_ip_pool"
     ip_starting_address = "172.16.59.2"
-    ip_pool_size        = "20"
+    ip_pool_size        = "30"
     ip_netmask          = "255.255.240.0"
     ip_gateway          = "172.16.50.254"
     dns_servers         = ["208.67.220.220"]
