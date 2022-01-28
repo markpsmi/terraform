@@ -27,7 +27,7 @@ module "terraform-intersight-iks" {
   ip_pool = {
     use_existing        = false
     name                = "marks_ip_pool"
-    ip_starting_address = "172.16.59.2"
+    ip_starting_address = "172.16.59.100"
     ip_pool_size        = "30"
     ip_netmask          = "255.255.240.0"
     ip_gateway          = "172.16.50.254"
@@ -40,7 +40,7 @@ module "terraform-intersight-iks" {
     name         = "marks"
     domain_name  = "glasshouse.com"
     timezone     = "America/Los_Angeles"
-    ntp_servers  = ["171.68.10.80"]
+    ntp_servers  = ["172.16.50.35"]
     dns_servers  = ["208.67.220.220"]
   }
 
@@ -57,8 +57,8 @@ module "terraform-intersight-iks" {
 # Version policy (To create new change "useExisting" to 'false' uncomment variables and modify them to meet your needs.)
   versionPolicy = {
     useExisting = false
-    policyName     = "1-19-15-iks.3"
-    iksVersionName = "1.19.15-iks.3"
+    policyName     = "1.20.14-iks.0"
+    iksVersionName = "1.20.14-iks.0"
   }
     
 # Trusted Registry Policy (To create new change "use_existing" to 'false' and set "create_new' to 'true' uncomment variables and modify them to meet your needs.)
@@ -138,7 +138,7 @@ module "terraform-intersight-iks" {
 # Worker Node Instance Type (To create new change "use_existing" to 'false' and uncomment variables and modify them to meet your needs.)
   instance_type = {
     use_existing = false
-    name         = "small"
+    name         = "marks-small"
     # cpu          = 4
     # memory       = 16386
     # disk_size    = 40
