@@ -115,14 +115,14 @@ module "terraform-intersight-iks" {
     overrides = yamlencode({"demoApplication":{"enabled":true}})
     },
     {
-    createNew = true
+    createNew = false
     addonPolicyName = "marks-dashboard"
-    addonName       = "kubernetes-dashboard"
-    description       = "K8s Dashboard Policy"
-    upgradeStrategy  = "AlwaysReinstall"
-    installStrategy  = "InstallOnly"
-    releaseVersion = "3.0.2-cisco6-helm3"
-    overrides = yamlencode({"demoApplication":{"enabled":true}})  
+    # addonName       = "kubernetes-dashboard"
+    # description       = "K8s Dashboard Policy"
+    # upgradeStrategy  = "AlwaysReinstall"
+    # installStrategy  = "InstallOnly"
+    # releaseVersion = "3.0.2-cisco6-helm3"
+    # overrides = yamlencode({"demoApplication":{"enabled":true}})  
     }  
     # {
     # createNew = true
