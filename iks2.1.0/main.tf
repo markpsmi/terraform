@@ -7,14 +7,14 @@ provider "intersight" {
 module "terraform-intersight-iks" {
 
   source  = "terraform-cisco-modules/iks/intersight//"
-  version = "2.1.31"
+  version = "2.2"
 
 # Kubernetes Cluster Profile  Adjust the values as needed.
   cluster = {
     name                = "Marks_iks_cluster2"
     action              = "Unassign"
     wait_for_completion = false
-    worker_nodes        = 3
+    worker_nodes        = 2
     load_balancers      = 6
     worker_max          = 4
     control_nodes       = 1
@@ -104,16 +104,16 @@ module "terraform-intersight-iks" {
 # Addon Profile and Policies (To create new change "createNew" to 'true' and uncomment variables and modify them to meet your needs.)
 # This is an Optional item.  Comment or remove to not use.  Multiple addons can be configured.
   addons       = [
-    {
-    createNew = true
-    addonPolicyName = "smm-tf"
-    addonName            = "smm"
-    description       = "SMM Policy"
-    upgradeStrategy  = "AlwaysReinstall"
-    installStrategy  = "InstallOnly"
-    releaseVersion = "1.7.4-cisco4-helm3"
-    overrides = yamlencode({"demoApplication":{"enabled":true}})
-    },
+   # {
+   # createNew = true
+   # addonPolicyName = "smm-tf"
+   # addonName            = "smm"
+   # description       = "SMM Policy"
+   # upgradeStrategy  = "AlwaysReinstall"
+   # installStrategy  = "InstallOnly"
+   # releaseVersion = "1.7.4-cisco4-helm3"
+   # overrides = yamlencode({"demoApplication":{"enabled":true}})
+   # },
     {
     createNew = false
     addonPolicyName = "marks-dashboard"
