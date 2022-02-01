@@ -14,7 +14,7 @@ module "terraform-intersight-iks" {
     name                = "Marks_iks_cluster2"
     action              = "Unassign"
     wait_for_completion = false
-    worker_nodes        = 2
+    worker_nodes        = 1
     load_balancers      = 6
     worker_max          = 4
     control_nodes       = 1
@@ -31,7 +31,7 @@ module "terraform-intersight-iks" {
     ip_pool_size        = "30"
     ip_netmask          = "255.255.240.0"
     ip_gateway          = "172.16.50.254"
-    dns_servers         = ["208.67.220.220"]
+    dns_servers         = ["172.16.50.35"]
   }
 
 # Sysconfig Policy (UI Reference NODE OS Configuration) (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
@@ -41,13 +41,13 @@ module "terraform-intersight-iks" {
     domain_name  = "glasshouse.com"
     timezone     = "America/Los_Angeles"
     ntp_servers  = ["172.16.50.35"]
-    dns_servers  = ["208.67.220.220"]
+    dns_servers  = ["172.16.50.35"]
   }
 
 # Kubernetes Network CIDR (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
   k8s_network = {
     use_existing = false
-    name         = "default"
+    name         = "default1"
 
     ######### Below are the default settings.  Change if needed. #########
     pod_cidr     = "100.100.0.0/16"
