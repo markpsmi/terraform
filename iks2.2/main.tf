@@ -104,16 +104,16 @@ module "terraform-intersight-iks" {
 # Addon Profile and Policies (To create new change "createNew" to 'true' and uncomment variables and modify them to meet your needs.)
 # This is an Optional item.  Comment or remove to not use.  Multiple addons can be configured.
   addons       = [
-   # {
-   # createNew = true
-   # addonPolicyName = "smm-tf"
-   # addonName            = "smm"
-   # description       = "SMM Policy"
-   # upgradeStrategy  = "AlwaysReinstall"
-   # installStrategy  = "InstallOnly"
-   # releaseVersion = "1.7.4-cisco4-helm3"
-   # overrides = yamlencode({"demoApplication":{"enabled":true}})
-   # },
+    {
+    createNew = true
+    addonPolicyName = "smm-tf"
+    addonName            = "smm"
+    description       = "SMM Policy"
+    upgradeStrategy  = "AlwaysReinstall"
+    installStrategy  = "InstallOnly"
+    releaseVersion = "1.7.4-cisco4-helm3"
+    overrides = yamlencode({"demoApplication":{"enabled":true}})
+    },
     {
     createNew = true
     addonPolicyName = "marks-dashboard2"
