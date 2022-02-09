@@ -138,9 +138,9 @@ module "terraform-intersight-iks" {
   instance_type = {
     use_existing = false
     name         = "marks-large"
-    # cpu          = 8
-    # memory       = 32768
-    # disk_size    = 40
+    cpu          = 8
+    memory       = 32768
+    disk_size    = 40
   }
 
 # Organization and Tag Information
