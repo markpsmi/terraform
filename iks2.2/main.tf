@@ -14,7 +14,7 @@ module "terraform-intersight-iks" {
     name                = "Marks_iks_cluster2"
     action              = "Unassign"
     wait_for_completion = false
-    worker_nodes        = 1
+    worker_nodes        = 2
     load_balancers      = 6
     worker_max          = 4
     control_nodes       = 1
@@ -26,12 +26,12 @@ module "terraform-intersight-iks" {
 # IP Pool Information (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
   ip_pool = {
     use_existing        = false
-    name                = "marks_ip_pool"
+    name                = "marks_iks_pool2"
     ip_starting_address = "172.16.59.100"
     ip_pool_size        = "30"
     ip_netmask          = "255.255.240.0"
     ip_gateway          = "172.16.50.254"
-    dns_servers         = ["172.16.50.35"]
+    dns_servers         = ["172.16.50.35","8.8.8.8"]
   }
 
 # Sysconfig Policy (UI Reference NODE OS Configuration) (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
@@ -106,7 +106,7 @@ module "terraform-intersight-iks" {
   addons       = [
     {
     createNew = true
-    addonPolicyName = "smm-tf"
+    addonPolicyName = "marks-smm2"
     addonName            = "smm"
     description       = "SMM Policy"
     upgradeStrategy  = "AlwaysReinstall"
@@ -137,9 +137,9 @@ module "terraform-intersight-iks" {
 # Worker Node Instance Type (To create new change "use_existing" to 'false' and uncomment variables and modify them to meet your needs.)
   instance_type = {
     use_existing = false
-    name         = "marks-small"
-    # cpu          = 4
-    # memory       = 16386
+    name         = "marks-large"
+    # cpu          = 8
+    # memory       = 32768
     # disk_size    = 40
   }
 
