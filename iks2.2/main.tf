@@ -41,7 +41,7 @@ module "terraform-intersight-iks" {
     domain_name  = "glasshouse.com"
     timezone     = "America/Los_Angeles"
     ntp_servers  = ["172.16.50.35"]
-    dns_servers  = ["172.16.50.35"]
+    dns_servers  = ["172.16.50.35","8.8.8.8"]
   }
 
 # Kubernetes Network CIDR (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
@@ -95,8 +95,8 @@ module "terraform-intersight-iks" {
     description  = "Test Policy"
     interfaces   = ["VM Network"]
     vcTargetName   = "172.16.50.50"
-    vcClusterName      = "MarkpsmiCL"
-    vcDatastoreName     = "UCSDMarksmiBIGDS292"
+    vcClusterName      = "MisaiaiDC"
+    vcDatastoreName     = "UCSDJefduboiBIGDS293"
     vcResourcePoolName = ""
     vcPassword      = var.vcPassword
   }
