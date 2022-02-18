@@ -95,7 +95,7 @@ module "terraform-intersight-iks" {
     description  = "Test Policy"
     interfaces   = ["VM Network"]
     vcTargetName   = "172.16.50.50"
-    vcClusterName      = "MisaiaiDC"
+    vcClusterName      = "MisaiaiCL"
     vcDatastoreName     = "UCSDJefduboiBIGDS293"
     vcResourcePoolName = ""
     vcPassword      = var.vcPassword
