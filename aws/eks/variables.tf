@@ -14,7 +14,7 @@ variable "worker1_desired_capacity" {
 }
 
 variable "worker2_instance_type" {
-  default     = "t2.small"
+  default     = "t2.medium"
   description = "Instance types for worker group 2"
 }
 
@@ -24,11 +24,11 @@ variable "worker2_desired_capacity" {
 }
 
 variable "k8_cluster_name" {
-  default     = "marks_k8s"
+  default     = "marks_k8s2"
   description = "K8 cluster name"
 }
 
 variable "k8_vpc_name" {
-  default     = "marks_k8s_vpc"
+  default     = "marks_k8s_vpc2"
   description = "K8 cluster name"
 }
