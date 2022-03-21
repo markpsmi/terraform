@@ -8,7 +8,7 @@ resource "aci_bridge_domain" "bd_for_subnet" {
   name        = "bd_for_subnet"
   description = "This bridge domain is created by the Terraform ACI provider"
 }
-/*
+
 
 resource "aci_subnet" "demosubnet" {
   parent_dn                    = "${aci_bridge_domain.bd_for_subnet.id}"
@@ -67,4 +67,4 @@ resource "aci_application_epg" "db" {
     prio                            = "unspecified"
     shutdown                    = "no"
   }
-*/
+
