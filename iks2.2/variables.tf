@@ -33,3 +33,6 @@ variable "tags" {
   type    = list(map(string))
   default = []
 }
+variable "apic_url" {}
+variable "apic_username" {}
+variable "apic_password" {}
