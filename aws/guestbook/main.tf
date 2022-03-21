@@ -28,7 +28,8 @@ provider "aws" {
   region = "us-west-1"
 }
 data "aws_eks_cluster" "cluster" {
-  name = data.terraform_remote_state.eks.outputs.cluster_id
+  name = "marks_k8s2-2FrjaFwe"
+  # name = data.terraform_remote_state.eks.outputs.cluster_id
 }
 
 provider "kubernetes" {
