@@ -25,7 +25,7 @@ data "terraform_remote_state" "eks" {
 }
 
 provider "aws" {
-  region = data.terraform_remote_state.eks.outputs.region
+  region = "us-west-1"
 }
 data "aws_eks_cluster" "cluster" {
   name = data.terraform_remote_state.eks.outputs.cluster_id
