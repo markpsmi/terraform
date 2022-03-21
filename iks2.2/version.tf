@@ -6,5 +6,9 @@ terraform {
       source  = "CiscoDevNet/intersight"
       version = ">=1.0.18"
     }
+    aci = {
+      source = "ciscodevnet/aci"
+      version = "0.4.1"
+    }
   }
 }
