@@ -27,7 +27,7 @@ module "terraform-intersight-iks" {
     control_nodes       = 1
     ssh_user            = var.ssh_user
     ssh_public_key      = var.ssh_key
-  }
+    }
 
 
 # IP Pool Information (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
@@ -39,6 +39,7 @@ module "terraform-intersight-iks" {
     ip_netmask          = "255.255.240.0"
     ip_gateway          = "172.16.50.254"
     dns_servers         = ["172.16.50.35","8.8.8.8"]
+    depends_on = [aci_subnet.demosubnet]
   }
 
 # Sysconfig Policy (UI Reference NODE OS Configuration) (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
