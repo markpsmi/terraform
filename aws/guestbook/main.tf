@@ -19,7 +19,7 @@ data "terraform_remote_state" "eks" {
   config = {
     organization = "Cisco-IST-TigerTeam"
     workspaces = {
-      name = "Marks-EKS2-2"
+      name = "Marks-EKS-2"
     }
   }
 }
