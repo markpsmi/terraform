@@ -11,6 +11,14 @@ provider "intersight" {
   endpoint  = var.endpoint
 }
 
+resource "intersight_kubernetes_cluster_profile" "deployaction" {
+
+  # Kubernetes Cluster Profile  Adjust the values as needed.
+  name                = "Marks-iks-cluster2"
+  action              = "Deploy"
+  
+  depends_on = [module.iks_cluster]
+  
 module "terraform-intersight-iks" {
 
   source  = "terraform-cisco-modules/iks/intersight//"
@@ -18,7 +26,7 @@ module "terraform-intersight-iks" {
 
 # Kubernetes Cluster Profile  Adjust the values as needed.
   cluster = {
-    name                = "TSA_cluster"
+    name                = "Marks-iks_cluster2"
     action              = "Assigned"
     wait_for_completion = false
     worker_nodes        = 2
