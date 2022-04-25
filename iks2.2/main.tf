@@ -18,6 +18,13 @@ resource "intersight_kubernetes_cluster_profile" "deployaction" {
   action              = "Deploy"
   
   depends_on = [module.iks_cluster]
+    
+ organization {
+    object_type = "organization.Organization"
+    moid        = data.intersight_organization_organization.organization_moid.results.0.moid
+  } 
+ }
+   
   
 module "terraform-intersight-iks" {
 
