@@ -11,6 +11,10 @@ provider "intersight" {
   endpoint  = var.endpoint
 }
 
+data "intersight_organization_organization" "organization_moid" {
+  name = var.organization
+}
+
 resource "intersight_kubernetes_cluster_profile" "deployaction" {
 
   # Kubernetes Cluster Profile  Adjust the values as needed.
