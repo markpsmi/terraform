@@ -30,7 +30,7 @@ resource "intersight_kubernetes_cluster_profile" "deployaction" {
  }
    
   
-module "terraform-intersight-iks" {
+module "iks_cluster" {
 
   source  = "terraform-cisco-modules/iks/intersight//"
   version = "2.2"
