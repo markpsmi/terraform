@@ -6,6 +6,6 @@ output "k8s_cluster_moid" {
  # moid = intersight_kubernetes_cluster_profile.deployaction.associated_cluster.0.moid
 #}
   
-output "k8s_cluster_kubeconfig" {
-  value = data.intersight_kubernetes_cluster.deployedcluster.results.0.kube_config
-} 
+#output "k8s_cluster_kubeconfig" {
+ # value = data.intersight_kubernetes_cluster.deployedcluster.results.0.kube_config
+#} 
