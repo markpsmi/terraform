@@ -15,19 +15,19 @@ data "intersight_organization_organization" "organization_moid" {
   name = var.organization
 }
 
-#resource "intersight_kubernetes_cluster_profile" "deployaction" {
+resource "intersight_kubernetes_cluster_profile" "deployaction" {
 
-  # Kubernetes Cluster Profile  Adjust the values as needed.
-  #name                = "Marks-iks-cluster2"
-  #action              = "Deploy"
+ #Kubernetes Cluster Profile  Adjust the values as needed.
+  name                = "Marks-iks-cluster2"
+  action              = "Deploy"
   
-  #depends_on = [module.iks_cluster]
+  depends_on = [module.iks_cluster]
     
- #organization {
-   # object_type = "organization.Organization"
-   # moid        = data.intersight_organization_organization.organization_moid.results.0.moid
-  #} 
- #}
+ organization {
+    object_type = "organization.Organization"
+    moid        = data.intersight_organization_organization.organization_moid.results.0.moid
+  } 
+ }
    
   
 module "iks_cluster" {
@@ -37,7 +37,7 @@ module "iks_cluster" {
 
 # Kubernetes Cluster Profile  Adjust the values as needed.
   cluster = {
-    name                = "CloudSecure"
+    name                = "Marks-iks-cluster2"
     action              = "Assigned"
     wait_for_completion = false
     worker_nodes        = 2
