@@ -18,7 +18,7 @@ data "intersight_organization_organization" "organization_moid" {
 resource "intersight_kubernetes_cluster_profile" "deployaction" {
 
  #Kubernetes Cluster Profile  Adjust the values as needed.
-  name                = "Marks-iks-cluster2"
+  name                = "Marks-iks-cluster3"
   action              = "Deploy"
   
   depends_on = [module.iks_cluster]
@@ -37,7 +37,7 @@ module "iks_cluster" {
 
 # Kubernetes Cluster Profile  Adjust the values as needed.
   cluster = {
-    name                = "Marks-iks-cluster2"
+    name                = "Marks-iks-cluster3"
     action              = "Assigned"
     wait_for_completion = false
     worker_nodes        = 2
@@ -52,8 +52,8 @@ module "iks_cluster" {
 # IP Pool Information (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
   ip_pool = {
     use_existing        = false
-    name                = "marks_iks_pool2"
-    ip_starting_address = "172.16.62.100"
+    name                = "marks_iks_pool3"
+    ip_starting_address = "172.16.62.130"
     ip_pool_size        = "30"
     ip_netmask          = "255.255.240.0"
     ip_gateway          = "172.16.50.254"
@@ -64,7 +64,7 @@ module "iks_cluster" {
 # Sysconfig Policy (UI Reference NODE OS Configuration) (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
   sysconfig = {
     use_existing = false
-    name         = "marks"
+    name         = "marks3"
     domain_name  = "glasshouse.com"
     timezone     = "America/Los_Angeles"
     ntp_servers  = ["172.16.50.35"]
@@ -74,7 +74,7 @@ module "iks_cluster" {
 # Kubernetes Network CIDR (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
   k8s_network = {
     use_existing = false
-    name         = "default1"
+    name         = "default3"
 
     ######### Below are the default settings.  Change if needed. #########
     pod_cidr     = "100.100.0.0/16"
@@ -84,7 +84,7 @@ module "iks_cluster" {
 # Version policy (To create new change "useExisting" to 'false' uncomment variables and modify them to meet your needs.)
   versionPolicy = {
     useExisting = false
-    policyName     = "1.21.11-iks.2"
+    policyName     = "Marks3-1.21.11-iks.2"
     iksVersionName = "1.21.11-iks.2"
   }
     
@@ -118,7 +118,7 @@ module "iks_cluster" {
     use_existing = false
     platformType = "esxi"
     targetName   = "172.16.50.50"
-    policyName   = "marksvcenter"
+    policyName   = "marksvcenter3"
     description  = "Test Policy"
     interfaces   = ["VM Network"]
     vcTargetName   = "172.16.50.50"
@@ -133,7 +133,7 @@ module "iks_cluster" {
   addons       = [
     {
     createNew = true
-    addonPolicyName = "marks-smm2"
+    addonPolicyName = "marks-smm3"
     addonName            = "smm"
     description       = "SMM Policy"
     upgradeStrategy  = "AlwaysReinstall"
@@ -143,7 +143,7 @@ module "iks_cluster" {
     },
     {
     createNew = true
-    addonPolicyName = "marks-dashboard2"
+    addonPolicyName = "marks-dashboard3"
     addonName       = "kubernetes-dashboard"
     description       = "K8s Dashboard Policy"
     upgradeStrategy  = "AlwaysReinstall"
@@ -164,7 +164,7 @@ module "iks_cluster" {
 # Worker Node Instance Type (To create new change "use_existing" to 'false' and uncomment variables and modify them to meet your needs.)
   instance_type = {
     use_existing = false
-    name         = "marks-large"
+    name         = "marks-large3"
     cpu          = 8
     memory       = 32768
     disk_size    = 40
