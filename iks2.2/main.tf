@@ -58,7 +58,7 @@ module "iks_cluster" {
     ip_netmask          = "255.255.240.0"
     ip_gateway          = "172.16.50.254"
     dns_servers         = ["172.16.50.35","8.8.8.8"]
-    depends_on = [aci_subnet.demosubnet]
+    # depends_on = [aci_subnet.demosubnet]
   }
 
 # Sysconfig Policy (UI Reference NODE OS Configuration) (To create new change "use_existing" to 'false' uncomment variables and modify them to meet your needs.)
