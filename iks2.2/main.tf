@@ -37,7 +37,7 @@ module "iks_cluster" {
 
 # Kubernetes Cluster Profile  Adjust the values as needed.
   cluster = {
-    name                = "BBS-iks-cluster2"
+    name                = "Marks-iks-cluster2"
     action              = "Assigned"
     wait_for_completion = false
     worker_nodes        = 2
