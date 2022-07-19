@@ -123,7 +123,7 @@ module "iks_cluster" {
     interfaces   = ["VM Network"]
     vcTargetName   = "172.16.50.50"
     vcClusterName      = "MisaiaiCL"
-    vcDatastoreName     = "UCSDJefduboiBIGDS293"
+    vcDatastoreName     = "MisaiaiCLDS01"
     vcResourcePoolName = ""
     vcPassword      = var.vcPassword
   }
