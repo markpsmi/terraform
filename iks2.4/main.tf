@@ -84,8 +84,8 @@ module "iks_cluster" {
 # Version policy (To create new change "useExisting" to 'false' uncomment variables and modify them to meet your needs.)
   versionPolicy = {
     useExisting = false
-    policyName     = "Marks3-1.21.11-iks.2"
-    iksVersionName = "1.21.11-iks.2"
+    policyName     = "1.21.13-iks.0"
+    iksVersionName = "1.21.13-iks.0"
   }
     
 # Trusted Registry Policy (To create new change "use_existing" to 'false' and set "create_new' to 'true' uncomment variables and modify them to meet your needs.)
