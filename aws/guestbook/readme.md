@@ -1,6 +1,6 @@
 # Install Guestbook Application in EKS Cluster using Terraform Cloud for Bussiness (TFCB). 
 
-These Terraform files will install Guestbook applicaiton in a EKS Cluster    
+These Terraform files will install Guestbook applicaton in a EKS Cluster    
 
 
 ## TFCB Workspace Setup Details
