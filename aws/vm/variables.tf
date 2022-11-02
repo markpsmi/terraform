@@ -7,7 +7,7 @@ variable "az" {
 }
 
 variable "ami" {
-  default = "ami-0d361301d8f7067d5"
+  default = "ami-09d2c265e123a3907"
 }
 
 variable "instance_type" {
