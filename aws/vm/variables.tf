@@ -3,7 +3,7 @@ variable "region" {
 }
 
 variable "az" {
-  default = "us-west-1a"
+  default = "us-west-1b"
 }
 
 variable "ami" {
