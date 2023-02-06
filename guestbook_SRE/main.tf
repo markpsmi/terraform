@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path    = ""
+  config_path    = var.kubeconfig
   config_context = "my-context"
   }
 resource "kubernetes_deployment" "frontend" {
