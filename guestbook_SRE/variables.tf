@@ -1,9 +1,3 @@
-variable "apikey" {
+variable "kubeconfig" {
   type =  string
-}  
-variable "secretkey" {
-  type  = string
-}
-variable "endpoint" {
-  default = "https://www.intersight.com"
-}  
+} 
