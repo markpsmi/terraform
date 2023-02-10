@@ -1,9 +1,9 @@
 provider "kubernetes" {
   host = "https://marksvmwarecl.glasshouse.com"
 
-  client_certificate     var.client_cert
-  client_key             var.client_key
-  cluster_ca_certificate var.client_ca_cert
+  client_certificate   =  var.client_cert
+  client_key           =  var.client_key
+  cluster_ca_certificate = var.client_ca_cert
 }
 resource "kubernetes_deployment" "frontend" {
 
