@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  host = "https://104.196.242.174"
+  host = "https://marksvmwarecl.glasshouse.com"
 
   client_certificate     var.client_cert
   client_key             var.client_key
