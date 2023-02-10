@@ -1,7 +1,10 @@
 provider "kubernetes" {
-  config_path    = var.kubeconfig
-  config_context = "my-context"
-  }
+  host = "https://104.196.242.174"
+
+  client_certificate     var.client_cert
+  client_key             var.client_key
+  cluster_ca_certificate var.client_ca_cert
+}
 resource "kubernetes_deployment" "frontend" {
 
 
